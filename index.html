@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Kamu Sayang 💚</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f0;
+            font-family: 'Quicksand', sans-serif;
+            color: #4a5d4a;
+            overflow-x: hidden;
+        }
+
+        /* Overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f4f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: opacity 1s ease;
+        }
+
+        .btn-open {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #a7c7a7;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-open:hover {
+            transform: scale(1.08);
+            background-color: #93b893;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            padding-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            background: white;
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(167, 199, 167, 0.3);
+            text-align: center;
+            border: 5px solid #c1d3c1;
+            animation: fadeUp 1.2s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            color: #8fbc8f;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: beat 0.8s infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes beat {
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem;
+            color: #6b8e23;
+            margin: 0 0 20px 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            width: calc(50% - 10px);
+            min-width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            border: 4px solid #ddecdd;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        /* Message */
+        .message {
+            line-height: 1.9;
+            font-size: 1.08rem;
+            background: #f9fff9;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 20px;
+            border-left: 6px solid #a7c7a7;
+            text-align: left;
+        }
+
+        .footer {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #a7c7a7;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatHeart 6s linear infinite;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Overlay -->
+    <div id="overlay">
+        <button class="btn-open" onclick="startWeb()">
+            Klik untuk Buka Pesan 💚
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+
+        <div class="container">
+            <div class="heart">💚</div>
+
+            <h1>Halo Cantik!</h1>
+
+            <div class="gallery">
+                <img src="https://cdn.discordapp.com/attachments/816445663054528583/1504577485948321922/IMG-20260430-WA0011.jpg?ex=6a077e7a&is=6a062cfa&hm=bc18b5479e1bc4d35526331aa20dd0a8bcc713823f35fa6d9b6435144ff7533e&"
+                    alt="Foto Kenangan 1">
+
+                <img src="https://cdn.discordapp.com/attachments/816445663054528583/1504573245574090782/IMG-20260430-WA0013.jpg?ex=6a077a87&is=6a062907&hm=702bfad8f2526932e6b2eff26ec686f62db2ac1190b2472e442d976a6279c8e5&"
+                    alt="Foto Kenangan 2">
+            </div>
+
+            <div class="message">
+                <p>Hai Sayang,</p>
+
+                <p>
+                    Aku sengaja memilih warna hijau untuk rumah kecil kita di internet ini.
+                    Sama seperti warna favorit kita, aku ingin hubungan kita selalu terasa
+                    seperti pagi yang segar—menenangkan, penuh kehidupan, dan terus bertumbuh
+                    setiap harinya.
+                </p>
+
+                <p>
+                    Terima kasih sudah menjadi tempat teduhku. Di sampingmu, aku merasa bisa jadi
+                    diriku sendiri tanpa harus berpura-pura. Seperti tanaman yang butuh air dan
+                    sinar matahari, hadirmu adalah alasan kenapa aku bisa terus berkembang sampai sekarang.
+                </p>
+
+                <p>
+                    Mari terus tumbuh bersama, melewati banyak musim, dan tetap saling mendukung
+                    dengan cara kita yang paling nyaman. Aku bersyukur memilikimu di sisiku.
+                </p>
+
+                <p style="text-align:center; margin-top:25px;">
+                    <b>I love you, today and every day after. 💚</b>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Dibuat dengan seluruh kasih sayang 💚
+        </div>
+
+        <!-- Tempat musik -->
+        <div id="musicContainer"></div>
+
+    </div>
+
+    <script>
+        function startWeb() {
+
+            // Fade overlay
+            document.getElementById('overlay').style.opacity = '0';
+
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('mainContent').style.opacity = '1';
+            }, 1000);
+
+            // Floating hearts
+            createHearts();
+            setInterval(createHearts, 1200);
+        }
+
+        function createHearts() {
+
+            const heart = document.createElement('div');
+
+            heart.classList.add('floating-heart');
+
+            heart.innerHTML = '💚';
+
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+    </script>
+
+</body>
+</html>
